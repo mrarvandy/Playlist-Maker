@@ -20,6 +20,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'User',
+    hooks: {
+      beforeCreate(instance, options){
+        let firstName = instance.first_name.toLowerCase()
+        let lastName = instance.last_name.toLowerCase()
+        instance.username = `${firstName}${lastName}`
+      }
+    }
   });
   return User;
 };
