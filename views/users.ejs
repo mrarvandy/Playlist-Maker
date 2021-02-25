@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    <h1>List Users</h1>
+    <a href="users/add">Add User</a>
+    <table border = "1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            <th>Action</th>
+            
+        </tr>
+        <% for (let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= data[i].first_name %></td>
+                <td><%= data[i].last_name %></td>
+                <td><%= data[i].username%></td>
+                <td><a href="">Edit </a>
+                    <a href="">Delete </a>
+                </td>
+            </tr>
+        <%} %>
+    </table>
+</body>
+</html>
