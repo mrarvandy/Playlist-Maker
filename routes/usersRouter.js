@@ -3,10 +3,8 @@ const router = express.Router()
 const UserController = require('../controllers/usersController')
 
 
-router.get('/users', UserController.getUser)
-
-router.get('/users/add', UserController.getAddUsers)
-
-router.post('/users/add', UserController.postAddUsers)
+router.get('/', UserController.getUser)
+router.get('/add', UserController.getAddUsers)
+router.post('/add', UserController.postAddUsers)
 
 module.exports = router

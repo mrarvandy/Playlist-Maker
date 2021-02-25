@@ -3,6 +3,6 @@ const router = express.Router()
 const PlaylistController = require('../controllers/playlistsController')
 
 
-router.get('/playlists',  PlaylistController.getPlaylists)    
+router.get('/',  PlaylistController.getPlaylists)    
 
 module.exports = router
