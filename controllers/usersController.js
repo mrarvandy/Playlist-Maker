@@ -2,7 +2,7 @@ const {User, Playlist} = require('../models/index')
 
 class UserController {
     static getUser(req, res) {
-        User.findAll()
+        User.findAll({include: Playlist})
             .then((data) =>{
                 res.render('users', {data})
             })
