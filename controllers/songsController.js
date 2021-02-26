@@ -29,7 +29,10 @@ class SongController {
     }
 
     static readData (req, res) {
-        Song.findAll({include: Country})
+        Song.findAll({
+            include: [Country],
+            order : [['CountryId', 'ASC']]
+        })
             .then((data) => {
                 res.render('see-song', {data});
             })
