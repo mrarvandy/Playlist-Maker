@@ -8,13 +8,23 @@
 </head>
 <body>
     <h1>Playlist</h1>
-    <table border = "1">
+    <table style="border: 1;">>
         <tr>
-            <th>title</th>
+            <th>Title</th>
+            <th>Owner</th>
+            <th>Songs</th>
+            <th>Action</th>
         </tr>
         <% for (let i= 0; i < data.length; i++){ %>
             <tr>
                 <td><%= data[i].title %></td>
+                <td><%= data[i].User.username %></td>
+                <td>
+                    <% for (let j=0; j < data[i].Songs.length; j++) { %>
+                        <iframe src="<%= data[i].Songs[j].embeddedCodeURL %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    <% } %>
+                </td>
+                <td><a href='/playlists/addsongs/<%= data[i].id %>'>Add Song</a></td>
             </tr>
         <%} %>
     </table>
